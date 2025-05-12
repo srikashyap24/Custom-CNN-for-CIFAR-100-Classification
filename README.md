@@ -12,4 +12,4 @@ Custom CNN Architecture
 ### Architecture Design
 The custom CNN architecture consists of three convolutional blocks followed by a fully
 connected classification head. The following layers and techniques were used in the design:
-<img src="">
+<img src="Draw a convolutional neural network architecture diagram titled "Custom CNN for CIFAR-100". - visual selection.png">
