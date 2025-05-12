@@ -1,4 +1,4 @@
-# Custom Convolutional Neural Network for CIFAR-100 Image Classification
+# (new.ipynb)Custom Convolutional Neural Network for CIFAR-100 Image Classification
 ## Introduction 
 Convolutional Neural Networks (CNNs) are widely used in the field of computer vision for
 tasks such as image classification, object detection, and segmentation. The CIFAR-100
