@@ -8,3 +8,8 @@ for image classification on the CIFAR-100 dataset. Additionally, the performance
 custom CNN is compared with several well-established deep learning architectures: ResNet-
 50, VGG-19, DenseNet-121, and EfficientNetB0. The goal is to understand the
 key components of CNN architecture and evaluate their impact on model performance.
+Custom CNN Architecture
+### Architecture Design
+The custom CNN architecture consists of three convolutional blocks followed by a fully
+connected classification head. The following layers and techniques were used in the design:
+<img src="">
