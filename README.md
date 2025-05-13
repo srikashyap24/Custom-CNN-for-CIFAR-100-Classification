@@ -15,3 +15,11 @@ connected classification head. The following layers and techniques were used in 
 
 
 <img src="arch.png">
+
+The custom CNN architecture consists of three convolutional blocks, each followed by
+batch normalization, ReLU activation, and max pooling. The first block uses 64 filters, the
+second uses 128, and the third uses 256 filters, all with a kernel size of 3 ×3. These filter
+sizes are standard in image classification tasks and help capture local spatial features at
+increasing levels of abstraction. A kernel size of 3 ×3 strikes a balance between capturing
+fine details and maintaining computational efficiency. Max pooling layers with a pool size of
+2×2 are applied after each block to reduce spatial dimensions and retain dominant features.
