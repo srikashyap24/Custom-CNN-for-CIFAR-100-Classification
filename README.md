@@ -10,3 +10,5 @@ The custom CNN architecture consists of three convolutional blocks followed by a
 <img src="arch.png">
 
 The custom CNN architecture consists of three convolutional blocks, each followed by batch normalization, ReLU activation, and max pooling. The first block uses 64 filters, the second uses 128, and the third uses 256 filters, all with a kernel size of 3 ×3. These filter sizes are standard in image classification tasks and help capture local spatial features at increasing levels of abstraction. A kernel size of 3 ×3 strikes a balance between capturing fine details and maintaining computational efficiency. Max pooling layers with a pool size of 2×2 are applied after each block to reduce spatial dimensions and retain dominant features.
+
+The ReLU (Rectified Linear Unit) activation function is used after each convolutional and fully connected layer (except the final output layer) to introduce non-linearity and accelerate convergence during training. The output layer uses the Softmax activation function to convert the raw output scores into a probability distribution over the 100 CIFAR-100 classes,enabling multi-class classification.
