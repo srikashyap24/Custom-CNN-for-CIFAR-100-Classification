@@ -43,4 +43,4 @@ The custom convolutional neural network (CNN) was trained for up to 200 epochs o
 
 ## Confusion Matrix
 
-<img src="confusionmat">
+<img src="confusionmat.png">
