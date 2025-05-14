@@ -37,10 +37,10 @@ The model was trained using the Adam optimizer with a learning rate of 1e-3. Spa
 ### Results and Training Analysis
 The custom convolutional neural network (CNN) was trained for up to 200 epochs on the CIFAR-100 dataset using a combination of data augmentation, batch normalization, and dropout to mitigate overfitting. The training process incorporated adaptive learning rate scheduling and early stopping to enhance generalization capability. During training, both the training and validation accuracy curves followed a consistent upward trend, indicating stable convergence. Around epoch 95, a temporary divergence was observed where validation accuracy decreased slightly while training accuracy continued to improve. Such fluctuations are commonly attributed to stochastic mini-batch updates and the impact of data augmentation strategies. The model quickly recovered, and performance metrics resumed parallel trends in subsequent epochs. The learning rate was dynamically adjusted using the ReduceLROnPlateau callback. Beginning with an initial learning rate of 0.001, reductions occurred at epochs 45, 73, 105, 115, and 125, eventually decreasing to 3.125 ×10−5. This scheduling technique effectively facilitated convergence by allowing finer weight updates in later stages of training, as supportedby literature. Despite being configured to train for 200 epochs, the training process halted at epoch 125 due to early stopping criteria based on validation accuracy. The model weights were restored from epoch 95, which achieved the best validation performance. At this epoch, the model recorded a training accuracy of 65.51% with a loss of 1.1864, while the validation accuracy reached 63.48% with a corresponding loss of 1.3314. The narrow generalization gap between training and validation performance suggests effective regularization through dropout, batch normalization, and learning rate decay. Figures show the training and validation accuracy and loss across epochs, respectively. These plots illustrate smooth convergence without evidence of severe overfitting or underfitting.
 
-<img src="">
+<img src="loss.png">
 
-<img src="">
+<img src="accuracy.png">
 
 ## Confusion Matrix
 
-<img src="">
+<img src="confusionmat">
