@@ -27,3 +27,20 @@ involved:
 [0, 1].
 • Data Augmentation: To reduce overfitting and improve generalization, data augmentation techniques such as rotation (up to 15 degrees), width and height shifts (up to10%), horizontal flipping, and zooming (up to 10%) were applied.
 • Label Encoding: The labels were kept in integer format to use sparse categorical cross-entropy loss, which is appropriate for integer labels in classification tasks.
+
+### Training and Evaluation
+The model was trained using the Adam optimizer with a learning rate of 1e-3. Sparse categorical cross-entropy was used as the loss function due to the integer nature of the labels. Several training techniques were used to prevent overfitting and ensure the model’s generalization ability:
+• EarlyStopping: This callback halts training if the validation accuracy does not improve for 30 consecutive epochs, ensuring that the model does not overfit.
+• ModelCheckpoint: The best model, based on validation accuracy, was saved during training to ensure the optimal model was used for evaluation.
+• ReduceLROnPlateau: The learning rate was reduced by a factor of 0.5 if the validation accuracy plateaued for 10 epochs, helping the model to converge more effectively.
+
+### Results and Training Analysis
+The custom convolutional neural network (CNN) was trained for up to 200 epochs on the CIFAR-100 dataset using a combination of data augmentation, batch normalization, and dropout to mitigate overfitting. The training process incorporated adaptive learning rate scheduling and early stopping to enhance generalization capability. During training, both the training and validation accuracy curves followed a consistent upward trend, indicating stable convergence. Around epoch 95, a temporary divergence was observed where validation accuracy decreased slightly while training accuracy continued to improve. Such fluctuations are commonly attributed to stochastic mini-batch updates and the impact of data augmentation strategies. The model quickly recovered, and performance metrics resumed parallel trends in subsequent epochs. The learning rate was dynamically adjusted using the ReduceLROnPlateau callback. Beginning with an initial learning rate of 0.001, reductions occurred at epochs 45, 73, 105, 115, and 125, eventually decreasing to 3.125 ×10−5. This scheduling technique effectively facilitated convergence by allowing finer weight updates in later stages of training, as supportedby literature. Despite being configured to train for 200 epochs, the training process halted at epoch 125 due to early stopping criteria based on validation accuracy. The model weights were restored from epoch 95, which achieved the best validation performance. At this epoch, the model recorded a training accuracy of 65.51% with a loss of 1.1864, while the validation accuracy reached 63.48% with a corresponding loss of 1.3314. The narrow generalization gap between training and validation performance suggests effective regularization through dropout, batch normalization, and learning rate decay. Figures show the training and validation accuracy and loss across epochs, respectively. These plots illustrate smooth convergence without evidence of severe overfitting or underfitting.
+
+<img src="">
+
+<img src="">
+
+## Confusion Matrix
+
+<img src="">
