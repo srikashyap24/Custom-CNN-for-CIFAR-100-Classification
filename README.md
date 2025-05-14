@@ -19,3 +19,11 @@ The ReLU (Rectified Linear Unit) activation function is used after each convolut
 ### Hyperparameters
 • An initial learning rate of 1 ×10−3 was used with the Adam optimizer, based on its ability to converge efficiently.
 • A batch size of 128 was chosen to balance memory efficiency and training speed.The model was trained for 200 epochs, with early stopping and learning rate reduction strategies to prevent overfitting.
+
+### Data Preprocessing
+The CIFAR-100 dataset contains color images of size 32x32 pixels. The preprocessing steps
+involved:
+• Reshaping and Normalization: The images were reshaped into the format (32, 32, 3),and pixel values were normalized by dividing by 255.0 to scale the values to the range
+[0, 1].
+• Data Augmentation: To reduce overfitting and improve generalization, data augmentation techniques such as rotation (up to 15 degrees), width and height shifts (up to10%), horizontal flipping, and zooming (up to 10%) were applied.
+• Label Encoding: The labels were kept in integer format to use sparse categorical cross-entropy loss, which is appropriate for integer labels in classification tasks.
